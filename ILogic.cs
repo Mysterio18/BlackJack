@@ -179,9 +179,9 @@ namespace BlackJack
             int PlayerSum = CalculateSum(GetCardsOfPlayer());
             if(ComputerSum > PlayerSum)
             {
-                return true;  
+                return false;  
             }
-            return false;
+            return true;
         }
 
         protected abstract Rank CheckLowerLimit(int ValueOfCard);
