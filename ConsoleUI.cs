@@ -45,7 +45,9 @@ namespace BlackJack
             ShowGreeting();
             WaitKey();
             ClearScreen();
-            
+
+            Logic.GenerateStartingSetsOfCards();
+
             MenuState StartingMenu = null; MenuState PlayingMenu = null;
             
             StartingMenu = new MenuState

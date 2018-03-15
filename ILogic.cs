@@ -15,8 +15,6 @@ namespace BlackJack
         protected int MinValueOfCard;
         protected int MaxValueOfCard;
 
-        protected bool IsComputerGoing = false;
-
         protected List<Card> SetOfPlayer = new List<Card>();
         protected List<Card> SetOfComputer = new List<Card>();
 
@@ -187,6 +185,8 @@ namespace BlackJack
         protected abstract Rank CheckLowerLimit(int ValueOfCard);
 
         protected abstract Rank CheckUpperLimit(int ValueOfCard);
+
+        public abstract void ConfigDeck();
 
         public abstract void GenerateStartingSetsOfCards();
 

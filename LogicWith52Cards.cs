@@ -8,12 +8,6 @@ namespace BlackJack
     {
         public override void GenerateStartingSetsOfCards()
         {
-            LenghtOfDeck = NumOfCards.Full52;
-
-            MinValueOfCard = 2;
-
-            MaxValueOfCard = 11;
-
             for (int i = 0; i < 2; i++)
             {
                 SetOfComputer.Add(GenerateCard());
@@ -47,6 +41,15 @@ namespace BlackJack
         sealed protected override Rank CheckUpperLimit(int ValueOfCard)
         {
             return Rank.None;
+        }
+
+        public override void ConfigDeck()
+        {
+            LenghtOfDeck = NumOfCards.Full52;
+
+            MinValueOfCard = 2;
+
+            MaxValueOfCard = 11;
         }
     }
 }

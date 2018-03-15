@@ -11,8 +11,6 @@ namespace BlackJack
         {
             SetStartingSettings(TypeOfLogic, TypeOfUI);
 
-            Logic.GenerateStartingSetsOfCards();
-
             UI.BeginInteractionWithLogic( Logic );
         }
 
@@ -20,6 +18,12 @@ namespace BlackJack
         {
             Logic = TypeOfLogic;
             UI = TypeOfUI;
+            SetupDeckSettings( Logic );
+        }
+
+        private void SetupDeckSettings( ILogic TypeOfLogic )
+        {
+            TypeOfLogic.ConfigDeck();
         }
 
 

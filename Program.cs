@@ -16,7 +16,6 @@ namespace BlackJack
 
             Session.Start( new LogicWith52Cards(), new ConsoleUI() );
 
-
         }
 
     }
