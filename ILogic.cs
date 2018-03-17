@@ -22,20 +22,26 @@ namespace BlackJack
         {
             Suite RandomSuite = (Suite)Generator.Next(1, 4);
 
-            if (RandomSuite == Suite.Club)
-            {
-                return "♣";
-            }
-            if (RandomSuite == Suite.Diamond)
-            {
-                return "♦";
-            }
-            if (RandomSuite == Suite.Heart)
-            {
-                return "♥";
-            }
 
-            return "♠";
+            switch (RandomSuite)
+            {
+                case Suite.Club:
+                    {
+                        return "♣";
+                    }
+                case Suite.Diamond:
+                    {
+                        return "♦";
+                    }
+                case Suite.Heart:
+                    {
+                        return "♥";
+                    }
+                default:
+                    {
+                        return "♠";
+                    }
+            }
         }
 
         protected Rank SpotRank(int ValueOfCard)
@@ -56,35 +62,37 @@ namespace BlackJack
 
         protected Rank CheckAverageLimit(int ValueOfCard)
         {
-
-            if (ValueOfCard == 6)
+            switch (ValueOfCard)
             {
-                return Rank.Six;
+                case 6:
+                    {
+                        return Rank.Six;
+                    }
+                case 7:
+                    {
+                        return Rank.Seven;
+                    }
+                case 8:
+                    {
+                        return Rank.Eight;
+                    }
+                case 9:
+                    {
+                        return Rank.Nine;
+                    }
+                case 10:
+                    {
+                        return (Rank)Generator.Next(10, 13);
+                    }
+                case 11:
+                    {
+                        return Rank.Ace;
+                    }
+                default:
+                    {
+                        return Rank.None;
+                    }
             }
-            if (ValueOfCard == 7)
-            {
-                return Rank.Seven;
-            }
-            if (ValueOfCard == 8)
-            {
-                return Rank.Eight;
-            }
-            if (ValueOfCard == 9)
-            {
-                return Rank.Nine;
-            }
-            if (ValueOfCard == 10)
-            {
-                return (Rank)Generator.Next(10, 13);
-            }
-            if (ValueOfCard == 11)
-            {
-                return Rank.Ace;
-            }
-
-
-            return Rank.None;
-
         }
 
         protected Card GenerateCard()

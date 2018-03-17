@@ -18,24 +18,29 @@ namespace BlackJack
 
         sealed protected override Rank CheckLowerLimit(int ValueOfCard)
         {
-            if (ValueOfCard == 2)
+            switch( ValueOfCard )
             {
-                return Rank.Two;
+                case 2: 
+                    {
+                        return Rank.Two;
+                    }
+                case 3:
+                    {
+                        return Rank.Three;
+                    }
+                case 4:
+                    {
+                        return Rank.Four;
+                    }
+                case 5:
+                    {
+                        return Rank.Five;
+                    }
+                default:
+                    {
+                        return Rank.None;
+                    }
             }
-            if (ValueOfCard == 3)
-            {
-                return Rank.Three;
-            }
-            if (ValueOfCard == 4)
-            {
-                return Rank.Four;
-            }
-            if (ValueOfCard == 5)
-            {
-                return Rank.Five;
-            }
-
-            return Rank.None;
         }
 
         sealed protected override Rank CheckUpperLimit(int ValueOfCard)
